@@ -1,0 +1,49 @@
+.linha{
+    display: flex; flex-direction: row;
+    height: 33.3%;
+    width: 100%;
+
+}
+
+.retanguloAzul50{
+    height: 500px;
+    width: 50%;
+    background-color: rgb(5, 176, 171);
+    display: flex;
+    align-items: center;
+
+}
+.retanguloAmarelo{
+    height: 500px;
+    width: 50%;
+    background-color: yellow;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.retanguloAzul100{
+    height: 500px;
+    width: 100%;
+    background-color: rgb(5, 176, 171);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.retanguloVazio{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: space-between;
+}
+.quadradoAmarelo{
+    background-color: yellow;
+    width: 150px;
+    height: 150px;
+}
+.quadradoAzul{
+    background-color: rgb(5, 176, 171);
+    width: 150px;
+    height: 150px;
+}
