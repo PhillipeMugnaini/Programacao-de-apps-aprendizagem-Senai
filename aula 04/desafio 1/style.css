@@ -1,0 +1,130 @@
+.divFundo{
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.divRow{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.qdrInvisivel{
+    
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.qdrAmarelo{
+    width: 90px;
+    height: 90px;
+    background-color: yellow;
+}
+.marginTopOnCube{
+    margin-top: 410px;
+}
+.marginCenter{
+    margin-left: 25%;
+}
+.purpleCube{
+    width: 90px;
+    height: 90px;
+    background-color: purple;
+    
+}
+.center{
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.redCube{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.marginTop{
+    margin-top: 3%;
+}
+.marginCenterOnCube{
+    margin-left: 40%;
+}
+.marginTopOnRedCube{
+    margin-top: 320px;
+    margin-left: 410px;
+}
+.blueCube{
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.marginLeft{
+    margin-left: 320px;
+}
+.entre{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.meio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dois{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.orangeCube{
+    width: 500px;
+    height: 500px;
+    background-color: orange;
+}
+.end_{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.retanguloBlue{
+    width: 50%;
+    height: 500px;
+    background-color: blue;
+}
+.retanguloRed{
+    width: 50%;
+    height: 500px;
+    background-color:red;
+}
+
+.whiteCircle{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.yellowCircle{
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 50%;
+}
