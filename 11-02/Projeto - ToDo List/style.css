@@ -1,0 +1,14 @@
+.menu{
+    width: 100%;
+    height: 100px;
+    background-color: darkred;
+
+    padding: 10px;
+}
+
+.taskSquare{
+    
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(199, 185, 185);
+}
