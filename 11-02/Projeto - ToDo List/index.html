@@ -8,8 +8,12 @@
 
 
 <style>
-    .my-style{
+    .white{
         color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .black{
+        color: black;
         font-family: 'Times New Roman', Times, serif;
     }
 </style>
@@ -18,14 +22,16 @@
 <body>
     <div class="menu">
 
-        <h1 class="my-style">ToDo List</h1>
+        <h1 class="white">ToDo List</h1>
 
         <input type="text", id="input", placeholder="Add Task">
-        <button onclick=>Adicionar Tarefa</button>
+        <button onclick="addTask()">Adicionar Tarefa</button>
+
+        <h2 class="black">Task List</h2>
 
     </div>
     <div class="taskSquare">
-
+        <ul id="taskList"></ul>
     </div>
     
 
