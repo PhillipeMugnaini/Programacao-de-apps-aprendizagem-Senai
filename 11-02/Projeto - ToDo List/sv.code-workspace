@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../aula 04"
+		},
+		{
+			"path": "../../Galeria de Imagens"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Galeria de Imagens"
+	}
+}
