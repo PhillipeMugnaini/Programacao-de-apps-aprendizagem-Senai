@@ -12,18 +12,23 @@
             color: rgb(236, 236, 42);
         }
 
-        .img{
-            back
-        }
     </style>
 </head>
 
 <body>
-    <div class="" style="display: flex;">
-        <h1 class="yellow"">Interative Galery</h1>
-        <div class=" menu"></div>
+    <div class="main-container">
+        <div class="menu">
+            <h1 class="yellow">Interative Galery</h1>
+            <div class="search-group">
+                <input type="text" id="imgUrl" placeholder="Adicione o link da imagem...">
+                <button type="button" onclick="adicionarImagem()">Adicionar</button>
+            </div>
+        </div>
+        
+        <section id="galeria" class="galeria-container"></section>
     </div>
 
+    <script src="Scripts/scripts.js"></script>
 </body>
 
 </html>
