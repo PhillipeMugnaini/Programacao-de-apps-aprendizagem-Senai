@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .whiteFont{
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="titleBlue">
+            <h1 class="whiteFont"><strong>Painel de Análise de Produtos</strong></h1>
+        </div>
+        <div class="inputDiv">
+
+            <div class="inputShape">
+                <input type="text"placeholder="Nome do Produto" id="nome">
+            </div>
+            <div class="inputShape">
+                <input type="text" placeholder="Preço (R$)" id="preco">
+            </div>
+            <div class="inputShape">
+                <input type="text" placeholder="Quantidade" id="quantidade">
+            </div>
+            <div class="btnShape">
+                <button type="button" onclick="addProduct()">Adicionar Produto</button>
+            </div>
+
+        </div>
+        <div class="outputDiv">
+            
+                <div class="orangeSquare">
+                    <div class="titleOrangeSquare">
+                        <h2 class="whiteFont"><strong>Produto Mais Caro</strong></h2>
+                    </div>
+                    <div class="orangeCountainer">
+                        <p class="whiteFont" id="produtoMaisCaroNome"></p>
+                    </div>
+                </div>
+
+                <div class="greenSquare">
+                    <div class="titleGreenSquare">
+                        <h2 class="whiteFont"><strong>Maior Quantidade</strong></h2>
+                    </div>
+                    <div class="greenCountainer">
+                        <p class="whiteFont"  id="maiorQuantidadeValor"></p>
+                    </div>
+                </div>
+
+                <div class="blueSquare">
+                    <div class="titleBlueSquare">
+                        <h2 class="whiteFont"><strong>Valor Total do Estoque</strong></h2>
+                    </div>
+                    <div class="blueCountainer">
+                        <p class="whiteFont"  id="valorTotalEstoque"></p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
