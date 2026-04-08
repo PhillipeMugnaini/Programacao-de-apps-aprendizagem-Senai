@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard de Vendas</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h2>Dashboard de Vendas</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+  <div style="width: 400px; height: 300px;">
+    <canvas id="bar1"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 400px;">
+    <canvas id="pie1"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 300px;">
+    <canvas id="bar2"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 400px;">
+    <canvas id="pie2"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 300px;">
+    <canvas id="bar3"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 400px;">
+    <canvas id="pie3"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 300px;">
+    <canvas id="bar4"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 400px;">
+    <canvas id="pie4"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 300px;">
+    <canvas id="bar5"></canvas>
+  </div>
+
+  <div style="width: 400px; height: 300px;">
+    <canvas id="bar6"></canvas>
+  </div>
+
+</div>
+
+<script>
+
+const vendas = [
+  { id: 1, produto: "Notebook", categoria: "Eletrônicos", preco: 3500, quantidade: 2, cliente: "Ana", cidade: "Curitiba", data: "2025-01-10" },
+  { id: 2, produto: "Celular", categoria: "Eletrônicos", preco: 2000, quantidade: 1, cliente: "Carlos", cidade: "São Paulo", data: "2025-01-12" },
+  { id: 3, produto: "Camiseta", categoria: "Roupas", preco: 80, quantidade: 3, cliente: "João", cidade: "Curitiba", data: "2025-01-15" },
+  { id: 4, produto: "Calça", categoria: "Roupas", preco: 120, quantidade: 2, cliente: "Maria", cidade: "Rio de Janeiro", data: "2025-01-20" },
+  { id: 5, produto: "Tênis", categoria: "Calçados", preco: 300, quantidade: 1, cliente: "Ana", cidade: "Curitiba", data: "2025-02-01" },
+  { id: 6, produto: "Fone", categoria: "Eletrônicos", preco: 150, quantidade: 4, cliente: "Pedro", cidade: "Belo Horizonte", data: "2025-02-03" },
+  { id: 7, produto: "Relógio", categoria: "Acessórios", preco: 500, quantidade: 1, cliente: "Lucas", cidade: "São Paulo", data: "2025-02-10" },
+  { id: 8, produto: "Mochila", categoria: "Acessórios", preco: 200, quantidade: 2, cliente: "Fernanda", cidade: "Curitiba", data: "2025-02-15" },
+  { id: 9, produto: "Tablet", categoria: "Eletrônicos", preco: 1800, quantidade: 1, cliente: "Carlos", cidade: "São Paulo", data: "2025-02-18" },
+  { id: 10, produto: "Jaqueta", categoria: "Roupas", preco: 250, quantidade: 1, cliente: "Ana", cidade: "Curitiba", data: "2025-03-01" },
+  { id: 11, produto: "Sandália", categoria: "Calçados", preco: 120, quantidade: 2, cliente: "Juliana", cidade: "Salvador", data: "2025-03-03" },
+  { id: 12, produto: "Boné", categoria: "Acessórios", preco: 70, quantidade: 3, cliente: "Pedro", cidade: "Belo Horizonte", data: "2025-03-05" },
+  { id: 13, produto: "Monitor", categoria: "Eletrônicos", preco: 900, quantidade: 1, cliente: "Lucas", cidade: "São Paulo", data: "2025-03-10" },
+  { id: 14, produto: "Teclado", categoria: "Eletrônicos", preco: 250, quantidade: 2, cliente: "Fernanda", cidade: "Curitiba", data: "2025-03-12" },
+  { id: 15, produto: "Mouse", categoria: "Eletrônicos", preco: 100, quantidade: 3, cliente: "João", cidade: "Curitiba", data: "2025-03-15" }
+];
+
+// função genérica
+const agrupar = (chave, tipo) => {
+  const result = {};
+  vendas.forEach(v => {
+    if (!result[v[chave]]) result[v[chave]] = 0;
+
+    if (tipo === "faturamento") result[v[chave]] += v.preco * v.quantidade;
+    if (tipo === "quantidade") result[v[chave]] += v.quantidade;
+    if (tipo === "contagem") result[v[chave]] += 1;
+  });
+  return result;
+};
+
+// 1
+const fatCat = agrupar("categoria", "faturamento");
+
+new Chart(bar1, {
+  type: "bar",
+  data: {
+    labels: Object.keys(fatCat),
+    datasets: [{ label: "Faturamento por Categoria", data: Object.values(fatCat) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 2
+const qtdCat = agrupar("categoria", "quantidade");
+
+new Chart(pie1, {
+  type: "pie",
+  data: {
+    labels: Object.keys(qtdCat),
+    datasets: [{ data: Object.values(qtdCat) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 3
+const fatCidade = agrupar("cidade", "faturamento");
+
+new Chart(bar2, {
+  type: "bar",
+  data: {
+    labels: Object.keys(fatCidade),
+    datasets: [{ label: "Faturamento por Cidade", data: Object.values(fatCidade) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 4
+const pedidos = agrupar("cidade", "contagem");
+
+new Chart(pie2, {
+  type: "pie",
+  data: {
+    labels: Object.keys(pedidos),
+    datasets: [{ data: Object.values(pedidos) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 5
+const cliente = agrupar("cliente", "faturamento");
+
+new Chart(bar3, {
+  type: "bar",
+  data: {
+    labels: Object.keys(cliente),
+    datasets: [{ label: "Gasto por Cliente", data: Object.values(cliente) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 6
+const dist = agrupar("cliente", "contagem");
+
+new Chart(pie3, {
+  type: "pie",
+  data: {
+    labels: Object.keys(dist),
+    datasets: [{ data: Object.values(dist) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 7
+const prod = agrupar("produto", "quantidade");
+
+new Chart(bar4, {
+  type: "bar",
+  data: {
+    labels: Object.keys(prod),
+    datasets: [{ label: "Quantidade por Produto", data: Object.values(prod) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 8
+new Chart(pie4, {
+  type: "pie",
+  data: {
+    labels: Object.keys(fatCat),
+    datasets: [{ data: Object.values(fatCat) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 9
+new Chart(bar5, {
+  type: "bar",
+  data: {
+    labels: Object.keys(qtdCat),
+    datasets: [
+      { label: "Quantidade", data: Object.values(qtdCat) },
+      { label: "Faturamento", data: Object.values(fatCat) }
+    ]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// 10
+const mes = {};
+vendas.forEach(v => {
+  const m = v.data.slice(0, 7);
+  if (!mes[m]) mes[m] = 0;
+  mes[m] += v.preco * v.quantidade;
+});
+
+new Chart(bar6, {
+  type: "bar",
+  data: {
+    labels: Object.keys(mes),
+    datasets: [{ label: "Vendas por Mês", data: Object.values(mes) }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+</script>
+
+</body>
+</html>

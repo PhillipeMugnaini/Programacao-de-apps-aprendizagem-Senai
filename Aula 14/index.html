@@ -1,0 +1,41 @@
+<div width="500px" height="500px">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="script/chart.js"></script>
+
+<script>
+    
+    const dados = [
+        {nome: 'macarrao', valor: 5},
+        {nome: 'arroz', valor: 10},
+        {nome: 'feijao', valor: 7}
+    ]
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: dados.map((p) => {
+        return p.nome
+    }),
+
+      datasets: [{
+        label: '# of Votes',
+        data: dados.map((p) => {
+            return p.valor
+        }),
+
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
