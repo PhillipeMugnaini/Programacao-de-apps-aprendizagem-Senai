@@ -30,7 +30,7 @@ app.get('/usuario', (req, res) => {
       if(err){
           return 
       }
-    res.status(200).send({ usuario: result })
+    res.status(200).send(result )
     });
 });
 
