@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - Add</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form action="" id="form">
@@ -19,6 +20,21 @@
         </fieldset>
     </form>
     <br>
+    <form action="" id="formUpdate">
+        <fieldset>
+            <legend>Atualizar User</legend>
+            <input type="text" name="" id="idUpdate" disabled>
+            <br>
+            <input type="text" placeholder="nome" id="nomeUpdate">
+            <br>
+            <input type="email" placeholder="email" id="emailUpdate">
+            <br>
+            <input type="password" placeholder="senha" id="senhaUpdate">
+            <br>
+            <button type="submit">Atualizar</button>
+        </fieldset>
+    </form>
+    <br>
     <br>
     <br>
     <table border="1">
@@ -26,6 +42,7 @@
             <tr>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody id="listaUser">
