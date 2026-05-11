@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Pedidos</title>
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Sistema de Pedidos</h1>
+
+    <div class="card">
+
+      <div class="inputs">
+        <input type="text" id="client" placeholder="Nome do cliente">
+
+        <select id="status">
+          <option value="Pendente">Pendente</option>
+          <option value="Em andamento">Em andamento</option>
+          <option value="Finalizado">Finalizado</option>
+        </select>
+      </div>
+
+      <h3>Itens do Pedido</h3>
+
+      <div class="inputs">
+        <input type="text" id="itemName" placeholder="Nome do item">
+        <input type="number" id="itemPrice" placeholder="Preço">
+        <input type="number" id="itemQuantity" placeholder="Quantidade">
+      </div>
+
+      <button class="btn-add" onclick="addItem()">
+        Adicionar Item
+      </button>
+
+      <div id="itemsList"></div>
+
+      <button class="btn-create" onclick="createOrder()">
+        Criar Pedido
+      </button>
+
+    </div>
+
+    <div class="orders" id="orders"></div>
+
+  </div>
+
+  <script src="scripts/script.js"></script>
+
+</body>
+</html>

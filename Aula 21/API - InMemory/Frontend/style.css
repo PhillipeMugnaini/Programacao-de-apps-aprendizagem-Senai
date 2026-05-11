@@ -1,0 +1,112 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      padding:40px;
+    }
+
+    h1{
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:20px;
+    }
+
+    .inputs{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    input, select{
+      padding:10px;
+      border:none;
+      border-radius:8px;
+      outline:none;
+    }
+
+    button{
+      padding:10px 15px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .btn-add{
+      background:#22c55e;
+      color:white;
+    }
+
+    .btn-create{
+      background:#3b82f6;
+      color:white;
+      width:100%;
+      margin-top:10px;
+    }
+
+    .orders{
+      display:grid;
+      gap:15px;
+    }
+
+    .order{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+    }
+
+    .order h3{
+      margin-bottom:10px;
+    }
+
+    .item{
+      background:#334155;
+      padding:10px;
+      border-radius:8px;
+      margin-top:5px;
+    }
+
+    .actions{
+      margin-top:15px;
+      display:flex;
+      gap:10px;
+    }
+
+    .btn-delete{
+      background:#ef4444;
+      color:white;
+    }
+
+    .btn-update{
+      background:#f59e0b;
+      color:white;
+    }
+
+.btn-remove{
+  background:#ef4444;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-left:10px;
+  font-weight:bold;
+}
